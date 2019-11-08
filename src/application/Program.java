@@ -11,17 +11,11 @@ public class Program {
 
     public static void main(String[] args) {
 
-        Department obj =  new Department(1,"Books");
+        SellerDao sellerDao = DaoFactory.createSellerDao();  //pra instaciar é só chamar a fabrica(factory) assim ele reocnhece a interface*INjeção de dependencia*
 
-        System.out.println(obj);
-
-        Seller seller = new Seller(1,"Carlos","Carlos.carlos",new Date(),2500.0, obj);
-
-        SellerDao sellerDao = DaoFactory.createSellerDao(); //pra instaciar é só chamar a fabrica(factory) assim ele reocnhece a interface*INjeção de dependencia*
+        Seller seller = sellerDao.findById(3);
 
         System.out.println(seller);
-
-
 
     }
 }
