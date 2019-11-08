@@ -1,5 +1,7 @@
 package application;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -14,6 +16,8 @@ public class Program {
         System.out.println(obj);
 
         Seller seller = new Seller(1,"Carlos","Carlos.carlos",new Date(),2500.0, obj);
+
+        SellerDao sellerDao = DaoFactory.createSellerDao(); //pra instaciar é só chamar a fabrica(factory) assim ele reocnhece a interface*INjeção de dependencia*
 
         System.out.println(seller);
 
