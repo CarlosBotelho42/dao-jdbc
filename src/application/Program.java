@@ -7,11 +7,13 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
         SellerDao sellerDao = DaoFactory.createSellerDao();  //pra instaciar é só chamar a fabrica(factory) assim ele reocnhece a interface*INjeção de dependencia*
 
         System.out.println("=== TEST 1: seller findById ===");
@@ -45,6 +47,14 @@ public class Program {
         sellerDao.update(seller);
 
         System.out.println("Atualizou!!!");
+
+        System.out.println("=== TEST 6: DELETe Seller hehehe ===");
+        System.out.print("Entre com o Id a ser deletado; ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+
+        System.out.println("Deletadoooo!!");
+
 
     }
 }
