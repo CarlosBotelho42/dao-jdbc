@@ -39,5 +39,12 @@ public class Program {
 
         System.out.println("Usuario inserido! Dados: " + newSeller.getId());
 
+        System.out.println("=== TEST 5: Update Seller hehehe ===");
+        seller = sellerDao.findById(1); //procurar um vendedor para atualiar
+        seller.setName("Carlão bolado");
+        sellerDao.update(seller);
+
+        System.out.println("Atualizou!!!");
+
     }
 }
